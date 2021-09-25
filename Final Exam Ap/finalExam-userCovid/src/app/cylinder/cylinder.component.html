@@ -1,0 +1,42 @@
+<div class="wholePage">
+
+
+    <div class="margin-bottom-xs">
+        <button class="reset btn-gradient-1" (click)="openCylinderBooking()">Book Cylinder</button>
+
+    </div>
+
+    <div>
+
+        <div id="demo">
+
+            <div class="table-responsive-vertical shadow-z-1">
+                <table id="table" class="table table-hover table-mc-light-blue">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Company Name</th>
+                            <th>Company address</th>
+                            <th>Cylinders Avalabilty</th>
+                            <th>Cylinders Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let company of companies; let idx = index" >
+                            <td data-title="ID">{{company.id}}</td>
+                            <td data-title="Name">{{company.company_name}}</td>
+                            <td data-title="Link" *ngIf="company.hospital_website != '' ">
+                                {{company.company_address}}
+                            </td>
+                            <td data-title="Status">{{company.company_cylinder}}</td>
+                            <td data-title="Status">{{company.company_price}}</td>
+                            <td data-title="Delete ">
+                                <button class="bookbtn" (click)=bookCylinder(company)>Book</button>
+                             </td>
+                          </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>

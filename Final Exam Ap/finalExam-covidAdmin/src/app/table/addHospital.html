@@ -1,0 +1,67 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput >
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button  cdkFocusInitial>Ok</button>
+</div> -->
+
+
+
+<div class="head">
+    <div class="containerHospital">
+        <div class="title">
+            <h1 *ngIf="typeShow">Add Hospital</h1>
+            <h1 *ngIf="!typeShow">Edit Hospital</h1>
+
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+            <form #f="ngForm" 
+            (ngSubmit)="createEvent(f)">
+                <div class="first">
+                    <label for="first">Hospital name:</label>
+                    <div class="clear"></div>
+                    <input type="text" name="name" id="name"  ngModel #name="ngModel" 
+                    placeholder="enter hospital name" required>
+                </div>
+                <div class="last">
+                    <label for="last">Hospital website (if any):</label>
+                    <div class="clear"></div>
+                    <input type="text" name="website" 
+                    ngModel #website="ngModel"
+                    id="website" placeholder="enter website" required>
+                </div>
+                <div class="email">
+                    <label for="email">bed Avalabilty:</label>
+                    <div class="clear"></div>
+                    <input type="number" name="bed" 
+                    ngModel #bed="ngModel" id="bed" placeholder="enter beds" required>
+                </div>
+                <div class="pass">
+                    <label for="pass">Bed Price</label>
+                    <div class="clear"></div>
+                    <input type="text" name="price" 
+                    ngModel #price="ngModel" id="price"placeholder="enter Price" required>
+                </div>
+                <!-- <div class="cpass">
+                    <label for="Cpass"></label>
+                    <div class="clear"></div>
+                    <input type="password" name="pass" id="Cpass" placeholder="enter again password" required>
+                </div> -->
+                <div class="submit">
+                    <input type="submit" value="sign up" type="submit">
+                </div>
+            </form>
+    </div>
+</div>
+
+

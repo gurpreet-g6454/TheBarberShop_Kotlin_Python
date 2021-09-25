@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Book Cylinder from {{company.company_name}}</h1>
+<div mat-dialog-content>
+  <p>Email : </p>
+  <mat-form-field>
+    <input matInput  [(ngModel)]='BookCylinderObj.user_email'>
+  </mat-form-field>
+  <p>username : </p>
+  <mat-form-field>
+    <input matInput [(ngModel)]='BookCylinderObj.username' >
+  </mat-form-field>
+</div> 
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">cancel</button>
+  <button mat-button (click)="bookHospital()" cdkFocusInitial>Ok</button>
+</div>
