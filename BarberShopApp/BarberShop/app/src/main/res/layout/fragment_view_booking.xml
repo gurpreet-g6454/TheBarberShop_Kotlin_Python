@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewBookingFragment">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/small_padding"
+                android:text="@string/List_of_Users_text"
+                android:layout_weight=".25"
+                 />
+
+            <TextView
+                android:id="@+id/labelService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/small_padding"
+                android:text="@string/labelDAtee"
+                android:layout_weight=".25"
+                 />
+
+            <TextView
+                android:id="@+id/labelStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/small_padding"
+                android:text="@string/labelStartTime"
+                android:layout_weight=".25"
+                />
+
+            <TextView
+                android:id="@+id/labelAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/small_padding"
+                android:text="@string/labelAction"
+                android:layout_weight=".25"
+                />
+
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/usersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            tools:layout_conversion_absoluteHeight="537dp"
+            tools:layout_conversion_absoluteWidth="402dp"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="53dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Home"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

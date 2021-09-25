@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.barbershop.register.RegisterFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/register_home_fragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.barbershop.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_serviceFragment"
+            app:destination="@id/serviceFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_addBarber"
+            app:destination="@id/addBarber" />
+        <action
+            android:id="@+id/action_loginFragment_to_serviceFragment2"
+            app:destination="@id/serviceFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_serviceFragment3"
+            app:destination="@id/serviceFragment" >
+            <argument
+                android:name="userId"
+                android:defaultValue="null" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/serviceFragment"
+        android:name="com.example.barbershop.ServiceFragment"
+        android:label="fragment_service"
+        tools:layout="@layout/fragment_service" >
+        <argument
+            android:name="userId"
+            app:argType="string"
+            android:defaultValue=" " />
+        <action
+            android:id="@+id/action_serviceFragment_to_viewBookingFragment2"
+            app:destination="@id/viewBookingFragment" />
+        <action
+            android:id="@+id/action_serviceFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBookingFragment"
+        android:name="com.example.barbershop.ViewBookingFragment"
+        android:label="fragment_view_booking"
+        tools:layout="@layout/fragment_view_booking" >
+        <argument
+            android:name="userid"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_viewBookingFragment_self"
+            app:destination="@id/viewBookingFragment" />
+        <action
+            android:id="@+id/action_viewBookingFragment_to_serviceFragment"
+            app:destination="@id/serviceFragment" />
+        <action
+            android:id="@+id/action_viewBookingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBarber"
+        android:name="com.example.barbershop.addBarber"
+        android:label="fragment_add_barber"
+        tools:layout="@layout/fragment_add_barber" >
+        <action
+            android:id="@+id/action_addBarber_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
